@@ -1,0 +1,38 @@
+Window.SetBackgroundTopColor (0, 0, 0);
+Window.SetBackgroundBottomColor (0, 0, 0);
+for(i = 1; i <= 181; i++)
+{
+  image[i].image = Image("image-" + i + ".png").Scale(Window.GetWidth(), Window.GetHeight());
+  image[i].sprite = Sprite(image[i].image);
+  image[i].sprite.SetOpacity(0);
+  image[i].x = Window.GetX() + Window.GetWidth() / 2 - image[i].image.GetWidth() / 2;
+  image[i].y = Window.GetY() + Window.GetHeight() / 2 - image[i].image.GetHeight() / 2;
+  image[i].sprite.SetPosition(image[i].x, image[i].y, 0);
+}
+
+index = 1;
+fun boot_callback()
+{
+  if(index >= 181 + 1)
+  {
+    image[181].sprite.SetOpacity(1);
+  }
+  else
+  {
+    for(i = 1; i <= 181; i++)
+    {
+      if(index != i)
+      {
+        image[i].sprite.SetOpacity(0);
+      }
+      else
+      {
+        image[i].sprite.SetOpacity(1);
+      }
+    }
+    index++;
+  }
+}
+
+Plymouth.SetRefreshFunction(boot_callback);
+Plymouth.SetQuitFunction(boot_callback);

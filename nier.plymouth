@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=nier
+Description=yorhaloading
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/nier
+ScriptFile=/usr/share/plymouth/themes/nier/nier.script
