@@ -4,5 +4,5 @@ Description=yorhaloading
 ModuleName=script
 
 [script]
-ImageDir=/usr/share/plymouth/themes/nier
+ImageDir=/usr/share/plymouth/themes/nier/src
 ScriptFile=/usr/share/plymouth/themes/nier/nier.script
